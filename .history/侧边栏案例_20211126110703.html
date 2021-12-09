@@ -1,0 +1,56 @@
+<!-- /*
+* @Author: Xiao
+* @Date: 2021-11-15 16:30:27
+* @Last Modified by: Xiao
+* @Last Modified time: 2021-11-15 16:33:07
+*/ -->
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侧边栏案例</title>
+    <style>
+        a {
+            text-decoration: none;
+            width: 210px;
+            height: 40px;
+            display: block;
+            color: #fff;
+            background: rgb(94, 117, 130);
+            /* text-indent: 2em; */
+            /* 使用padding-left 为内容添加左边内框距(盒子的大小会改变) */
+            padding-left: 30px;
+            font-size: 14px;
+            /* 只要文字的行高和盒子的高度相等文字即可垂直居中 */
+            line-height: 40px;
+
+        }
+
+        /* 如何盒子本身没有指定width/height属性，则此时padding不会撑开盒子大小. */
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: green;
+        }
+
+        a:hover {
+            background-color: rgb(255, 90, 30);
+        }
+    </style>
+</head>
+<body>
+    <a href="#">手机 电话卡 </a>
+    <a href="#">电视 盒子 </a>
+    <a href="#">笔记本 平板 </a>
+    <a href="#">出行 穿戴</a>
+    <a href="#">智能 路由</a>
+    <a href="#">健康 儿童</a>
+    <a href="#">耳机 音响</a>
+
+    <div>
+
+    </div>
+</body>
+</html>

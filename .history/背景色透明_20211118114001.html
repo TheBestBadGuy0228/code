@@ -1,0 +1,55 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-11-18 11:23:03 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-18 11:23:03 
+ */ -->
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景色透明</title>
+    <style>
+        /* background: rgba(o, o,o, 0.3);
+            最后一个参数是alpha透明度，取值范围在0~1之间
+            我们习惯把0.3的0省略掉，写为background：rgba（0，0，0，.3）
+            注意：背景半透明是指盒子背景半透明，盒子里面的内容不受影响
+            CSS3新增属性，是1E9+版本浏览器才支持的
+            但是现在实际开发，我们不太关注兼容性写法了可以放心使用 */
+        div {
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        body {
+            background: #fff url(img/bg_1.jpeg) no-repeat fixed center top;
+        }
+
+        a {
+            /* 缩进 */
+            text-indent: 4em;
+            /* 去掉链接下划线 */
+            text-decoration: none;
+            /* 文字颜色 */
+            color: black;
+            font-size: 14px;
+
+        }
+
+        a:hover {
+            color: green;
+        }
+
+        div {
+            width: auto;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">我是你爸爸!!!</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-12-08 13:18:32 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-12-08 13:18:32 
+ */ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快报模块</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .kuaibao {
+            width: 248px;
+            height: 163px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            /* 设置边框圆角 */
+            border-radius: 20px;
+        }
+
+
+        .kuaibao h3 {
+            font-weight: 400;
+            height: 32px;
+            border-bottom: 1px dotted #ccc;
+            font-size: 14px;
+            line-height: 32px;
+            padding-left: 15px;
+        }
+
+        .kuaibao ul li a {
+            font-size: 12px;
+            color: #666;
+            /* 去掉链接下划线 */
+            text-decoration: none;
+        }
+
+        /* 去掉列表前面的小圆点 */
+        li {
+            list-style: none;
+            margin-left: 21px;
+        }
+
+        .kuaibao ul li {
+            /* 行高和父容器的高度相等;使得文字垂直居中 */
+            height: 23px;
+            line-height: 23px;
+        }
+
+        .kuaibao ul {
+            padding-top: 7px;
+        }
+
+        .kuaibao ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* 在CSS3中，新增了圆角边框样式，这样我们的盒子就可以变圆角了。
+border-radius属性用于设置元素的外边框圆角。
+语法：
+        border-radius length;
+
+* 参数值可以为数值或百分比的形式
+* 如果是正方形，想要设置为一个圆，把数值修改为高度或者宽度的半即可，或者直接写为50%
+* 如果是个矩形，设置为高度的一半就可以做
+* 该属性是一个简写属性，可以跟四个值，分别代表左上角、右上角、右下角、左下角
+* 分开写：border-top-left-radius、border-top-right-radius、border-bottom-right-radius和border-bottom-left-radius
+*/
+        .test {
+            height: 200px;
+            width: 300px;
+            background-color: greenyellow;
+            /* 一个值对应四个角
+            border-radius: 20px; */
+            /* 两个值对应左上右下;右上左下 */
+            /* border-radius: 20px 30px; */
+            /* 三个值对应的是左上;右上and左下;右下
+            border-radius: 10px 60px 30px; */
+            /* 四个值对应左上右上右下左下(顺时针) */
+            /* border-radius: 10px 20px 30px 40px; */
+            /* 设置圆形可采用百分比写法 */
+            border-radius: 900px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="kuaibao">
+        <h3>品优购快报</h3>
+        <ul>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】母亲节，健康好礼低至5折！</a></li>
+            <li><a href="#">【特惠】爆款耳机5折秒！</a></li>
+            <li><a href="#">【特惠】9.9元洗100张照片！</a></li>
+            <li><a href="#">【特惠】长虹智能空调立省1000</a></li>
+        </ul>
+
+    </div>
+
+    <div class="test">
+
+    </div>
+</body>
+</html>

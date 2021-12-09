@@ -1,0 +1,48 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-11-23 11:03:23 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-23 11:03:23 
+ */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格的细线边框</title>
+    <style>
+        table,
+        td {
+            /* 设置边框的属性 */
+            border: 1px solid greenyellow;
+            /* 相邻的自动边框合并 */
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <table align="center" cellspacing="0">
+        <tr>
+            <td>排名</td>
+            <td>关键词</td>
+            <td>趋势</td>
+            <td>进入搜索</td>
+            <td>最近七天</td>
+            <td>相关链接</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>鬼吹灯</td>
+            <td>上升</td>
+            <td>687</td>
+            <td>123</td>
+            <td><a href="#">贴吧</a><a href="##">图片</a><a href="###">百科</a></td>
+        </tr>
+    </table>
+</body>
+</html>

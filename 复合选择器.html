@@ -1,0 +1,70 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-10-27 14:29:16 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-10-27 14:29:16 
+ */ -->
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        /* 选择ul里面的li标签 */
+        ul li {
+            color: aqua;
+        }
+
+        .fuck li p {
+            color: brown;
+        }
+
+        .red>li {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 在CSS中，可以根据选择器的类型把选择器分为基础选择器和复合选择器，复合选择器是建立在基础选择器之上，对基本选择器进行组合形成的。
+&复合选择器可以更准确、更高效的选择目标元素（标签）
+&复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的
+&常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等等
+-->
+    <!-- 后代选择器又称为包含选择器，可以选择元素里面子元素。其写法就是把外层标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套时，内层标签就成为外层标签的后代。
+语法：
+元素1 元素2 ... 元素n{样式声明} -->
+    <!-- 子元素选择器（子选择器）只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素，
+语法：
+&元素1>元素2{样式声明}
+上述语法表示选择元素1里面的所有直接后代（子元素）元素2。
+例如：
+div>p{样式声明}/* 选择div里面所有最近一级p标签元素*/
+元素1和元素2中间用大于号隔开
+元素1是父级，元素2是子级，最终选择的是元素2
+元素2必须是亲儿子，其孙子、重孙之类都不归他管.你也可以叫他亲儿子选择器 -->
+    <ul>
+        <li>我要变个颜色</li>
+        <li>我要变个颜色</li>
+        <li>我要变个颜色</li>
+    </ul>
+    <ol>
+        <li>我不变颜色</li>
+    </ol>
+    <ul class="fuck">
+        <li>hahahaha</li>
+        <li>hahahaha</li>
+        <li>
+            <p>shit</p>
+        </li>
+    </ul>
+    <ul class="red">
+        <li>变
+            <a href="#">sure</a>
+        </li>
+        <li>变</li>
+        <li>变</li>
+    </ul>
+</body>
+</html>

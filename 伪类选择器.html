@@ -1,0 +1,102 @@
+<!-- 
+ * @Author: Xiao 
+ * @Date: 2021-11-15 14:29:07 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-15 14:29:07 
+-->
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style>
+        /* 链接伪类选择器 */
+        /* a:link :未访问的链接 */
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* a:visited :访问过的链接 */
+        a:visited {
+            color: orange;
+        }
+
+        /* a:hover :鼠标经过的链接 */
+        a:hover {
+            color: skyblue;
+        }
+
+        /* a:active :鼠标点下还未弹起的链接 */
+        a:active {
+            color: green;
+        }
+
+        .try a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .try a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* 注意事项:链接伪类选择器必须按照LVHA顺序进行书写,link>visited>hover>active */
+
+        /* focus伪类选择器 */
+        input:focus {
+            background: green;
+            color: seashell;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.6链接伪类选择器
+1.为了确保生效，请按照LVHA的循顺序声明：ink-：visited -：hover -：active. 2.记忆法：love hate或者|v包包hao。
+3.因为a链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式。 -->
+
+    <!-- 链接伪类选择器实际工作开发中的写法：
+/*a是标签选择器所有的链接*/ 
+a{
+color: gray;
+}
+/*：hover是链接伪类选择器鼠标经过*/
+a:hover {
+color：red；
+}
+/*鼠标经过的时候，由原来的灰色变成了红色*/ 了 -->
+    <a href="https://www.hamapi.com">百度一下</a>
+    <br>
+    <a href="#">李大平</a>
+    <div class="try">
+        <a href="#####">试一试</a>
+    </div>
+    <!-- ：focus伪类选择器用于选取获得焦点的表单元素。
+焦点就是光标，一般情况《input》类表单元素才能获取，因此这个选择器也主要针对于表单元素来说。
+input : focus {
+background-color: yellow; 
+}
+ -->
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <!-- 复合选择器总结 -->
+    <!-- 
+    选择器                              作用                                        特征                    使用情况            隔开符号及用法
+
+    后代选择器                      用来选择后代元素                            是后代即可(儿子.孙子....)           较多            符号是空格.nav a
+
+    子代选择器                     原用来选择最近一级元素                        只选择亲儿子(最近一级标签元素)       较少             符号是> .nav>a
+
+    并集选择器                    选择需要相同样式的标签元素                        可以用于集体声明                较多             符号是, .nav,a
+
+    链接伪类选择器                 选择不同状态的链接                               跟链接相关                    较多       符号是: 重点:a{}和a:hover
+
+    :focus选择器                   被聚焦的input标签的样式                          跟表单相关                   较少           记住input:focus 写法
+ -->
+</body>
+</html>

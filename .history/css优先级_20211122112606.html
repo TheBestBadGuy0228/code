@@ -1,0 +1,41 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-11-21 18:49:25 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-21 18:49:25 
+ */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css优先级</title>
+    <style>
+        .hsr {
+            color: green;
+        }
+
+        #demo {
+            color: yellow !important;
+        }
+
+        div {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!--     选择器                                          选择器权重
+        继承或者*                                         0,0,0,0
+        元素选择器                                        0,0,0,1
+    类选择器，伪类选择器                                    0,0,1,0
+        ID选择器                                          0,1,0,0
+    行内样式style=""！                                     1,0,0,0
+    !important 重要的                                        无穷大 
+-->
+    <div class="hsr" id="demo" style="color: purple;">
+        华盛荣光电
+    </div>
+</body>
+</html>

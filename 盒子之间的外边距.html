@@ -1,0 +1,143 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-11-26 11:10:19 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-26 11:10:19 
+ */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子之间的外边距</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .one {
+            /*       all     */
+            margin: 20px;
+            background-color: yellow;
+        }
+
+        .two {
+            /*      上     左右 */
+            margin: 10px 20px;
+            background-color: pink;
+        }
+
+        .three {
+            /*      上    左右  下 */
+            margin: 10px 20px 30px;
+            background-color: red;
+        }
+
+        .four {
+            /*       上   右    左  下*/
+            margin: 10px 20px 30px 40px;
+            background-color: skyblue;
+        }
+
+        .one,
+        .two,
+        .three,
+        .four {
+            width: 300px;
+            height: 300px;
+            /* 转换为行内块元素 */
+            display: inline-block;
+        }
+
+        .five {
+            width: 500px;
+            margin: 20px auto;
+            display: block;
+            background-color: greenyellow;
+            text-align: center;
+        }
+
+        .six {
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .seven {
+            width: 300px;
+            height: 300px;
+            background: black;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <!--外边距（margin）
+margin属性用于设置外边距，即控制盒子和盒子之间的距离。
+        属性                                                  作用
+    margin-left                                            左外边距
+    margin-right                                           右外边距
+    margin-top                                             上外边距
+    margin-bottom                                          下外边距
+
+    margin的简写方式和padding是一致的(单个参数控制上下左右;两个参数分别控制上下和左右;三个参数则为上(左右)下)
+-->
+
+    <!-- 
+    外边距典型应用
+外边距可以让块级盒子水平居中，但是必须满足两个条件：
+①盒子必须指定了宽度（width）。
+②盒子左右的外边距都设置为auto。
+.header { 
+    width:960px;
+    margin:o auto;
+}
+常见的写法，以下三种都可以：
+margin-left: auto; margin-right auto;
+margin: auto;
+margin:O auto;
+注意：以上方法是让块级元素水平居中，行内元素或者行内块元素水平居中给其父元素添加text-align：center即可。
+-->
+
+    <!-- 使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。
+        对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。
+
+    解决方案：
+        ①可以为父元素定义上边框。
+        ②可以为父元素定义上内边距。
+        ③可以为父元素添加overflow：hidden。
+
+还有其他方法，比如浮动、固定，绝对定位的盒子不会有塌陷问题，后面咱们再总结。
+
+1.9清除内外边距
+网页元素很多都带有默认的内外边距，而且不同浏览器默认的也不一致。因此我们在布局前，首先要清除下网页元素的内外边距。
+*{
+    padding:0; /*清除内边距*/
+    margin:0; /*清除外边距*/
+}
+注意：行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内块元素就可以了
+
+
+块级元素：
+（div、p、h1~h6、ul、ol、dl、li、dd、table、hr、blockquote、address、table、menu、pre，HTML5新增的header、section、aside、footer等）
+    块级元素新开启一行（即使是设置了width属性也是独占一行）、尽可能撑满父级元素的宽度，可以设置width和height属性；table元素浏览器默认的display属性为table
+行内元素:
+（span、img、a、lable、input、abbr（缩写）、em（强调）、big、cite（引用）、i（斜体）、q（短引用）、textarea、select、small、sub、sup，strong、u（下划线）、button（默认display：inline-block））
+    相邻的行内元素不换行，宽度即为内容的宽度、padding的4个方向都有效（从span标签可以看出，对于行内非替换元素，不会影响其行高，不会撑开父元素；而对于替换元素，则会撑开父元素）、margin只有水平方向有效（其中垂直方向的margin对行内替换元素（比如img元素）有效，对行内非替换元素无效）、不可以设置width和height属性。行内块元素表现其实和行内元素一样，只是其可以设置width和height属性。
+
+-->
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+    <span class="five">我要水平居中</span>
+
+    <div class="six">
+        <div class="seven">我是子元素</div>
+    </div>
+</body>
+</html>

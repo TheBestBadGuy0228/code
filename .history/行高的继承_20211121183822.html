@@ -1,0 +1,40 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-11-21 18:25:02 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-21 18:25:02 
+ */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>行高的继承</title>
+
+    <style>
+        body {
+            color: chartreuse;
+            /* 行高也遵循继承原则 */
+            /* font: 12px/24px 'microsoft YaHei'; */
+            /* 当行高为倍数写法时为单独指定光的属性的倍数;下面这种写法字体的行高大小将为14 * 1.5   */
+            font: 12px/1.5 'Microsoft Yahei';
+        }
+
+        p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 行高的继承性
+    body {
+        font:12px/1.5 Microsoft YaHei 
+    }
+    行高可以跟单位也可以不跟单位
+    如果子元素没有设置行高，则会继承父元素的行高为1.5 ·此时子元素的行高是：当前子元素的文字大小*1.5 -->
+    <p>华盛荣光电</p>
+    <p>华盛荣光电</p>
+</body>
+</html>

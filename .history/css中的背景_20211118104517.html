@@ -1,0 +1,66 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-11-16 09:35:27 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-16 09:35:27 
+ */ -->
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css中的背景</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-image: url(img/img_1.jpg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等。-->
+    <!-- 背景颜色 -->
+    <!-- background-color属性定义了元素的背景颜色。
+
+        background-color：颜色值；
+
+一般情况下元素背景颜色默认值是transparent（透明），我们也可以手动指定背景颜色为透明色。 -->
+
+    <!-- 背景图片 -->
+    <!-- background-image属性描述了元素的背景图像。实际开发常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常便于控制位置（精灵图也是一种运用场景）
+background-image : none I url (url)
+参数值                              作用
+none                        无背景图（默认的）
+url                     使用绝对或相对地址指定背景图像 
+
+背景平铺
+如果需要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性.
+background-repeat: repeat I no-repeat I repeat-x I repeat-y
+
+参数值                          作用
+repeat                  背景图像在纵向和横向上平铺（默认的）
+no-repeat                   背景图像不平铺
+repeat-x                  背景图像在横向上平铺
+repeat-y                 背景图像在纵向平铺
+
+-->
+<!-- 3.4背景图片位置
+利用 background-position-属性可以改变图片在背景中的位置.
+background-position: x y;
+参数代表的意思是：x坐标和y坐标。可以使用方位名词或者精确单位
+参数值                      说明
+length                  百分数由浮点数字和单位标识符组成的长度值
+position                top center bottom left center right方位名词 
+
+
+1.参数是方位名词
+如果指定的两个值都是方位名词，则两个值前后顺序无关，比如left top和top left效果一致
+如果只指定了一个方位名词，另一个值省略，则第二个值默认居中对齐
+-->
+    <div>
+
+    </div>
+</body>
+</html>

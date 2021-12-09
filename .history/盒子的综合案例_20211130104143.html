@@ -1,0 +1,100 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2021-11-29 14:30:58 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2021-11-29 14:30:58 
+ */ -->
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子的综合案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box1,
+        .box2 {
+            width: 298px;
+            height: 415px;
+            background-color: #fff;
+            margin: 100px auto;
+        }
+
+        .box1 img,
+        .box2 img {
+            /* 使盒子里面的图片宽度和他的父级一样宽(缩放) */
+            width: 100%;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .review,
+        .review2 {
+            height: 70px;
+            font-size: 14px;
+            margin: 30px 28px 0;
+        }
+
+        .appraise {
+            color: #b0b0b0;
+            font-size: 12px;
+            margin: 10px 28px 0;
+        }
+
+        .info h4 {
+            display: inline-block;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .info {
+            margin: 15px 28px 0;
+        }
+
+        .info em {
+            font-style: normal;
+            margin: 0 6px 0 15px;
+            color: #ebe4e0;
+        }
+
+        .info h4 a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .info span a {
+            text-decoration: none;
+            color: #ff6700;
+            font-size: 14px;
+        }
+
+        .box1,
+        .box2 {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img src="img/盒子的综合案例1.jpg" alt="小米蓝牙耳机">
+        <p class="review">快递牛，整体不错蓝牙可以说秒连。红米给力</p>
+        <div class="appraise">来自于 1114123 的评价</div>
+        <div class="info">
+            <h4><a href="#">Redmi AirDots真无线蓝...</a> </h4><em>|</em><span><a href="##">99.9元</a></span>
+        </div>
+        <div class="box2">
+            <img src="img/盒子的综合案例2.jpg" alt="打印机">
+            <p class="review2">一到家就忙着安装，太好了，小巧玲珑的，外观精美，洗的照片太好看了</p>
+            <div class="appraise2">来自于hz的评价</div>
+            <div class="info2"><a href="##">小米米家照片打印机</a><em>|</em><span><a href="##">479元</a></span></div>
+        </div>
+    </div>
+</body>
+</html>
