@@ -1,0 +1,206 @@
+/* 
+CSS属性书写顺序（重点）
+建议遵循以下顺序：
+!1.布局定位属性：display/position/float./clear，/visibility/overflow（建议display第一个写，毕竟关系到模式）
+!2.自身属性：width/height./margin/padding/border，/background
+!3.文本属性：color/font/text-decoration/text-align/vertical-align./white-space/break-word
+!4.其他属性（CSS3）：content/cursor/border-radius/box-shadow/text-shadow/background：linear-gradient. 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置版心 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+/* 头部盒子 */
+.header {
+    height: 42px;
+    /* 这里会层叠w中的margin元素 */
+    margin: 30px auto;
+}
+
+/* logo部分 */
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+
+/* 去除所有li标签的小原点 */
+li {
+    list-style: none;
+}
+
+/* 清除链接样式 */
+a {
+    text-decoration: none;
+}
+
+/* 导航部分 */
+.leader {
+    float: left;
+    margin-left: 60px;
+}
+
+.header ul li {
+    float: left;
+    margin-left: 15px;
+}
+
+/* 导航栏链接属性 */
+.header ul li a {
+    display: inline-block;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.header ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+/* 搜索模块 */
+.search {
+    float: left;
+    width: 412px;
+    /* height: 42px; */
+    margin-left: 50px;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    border: 0;
+    background-color: #00a4ff;
+    background-image: url(../images/search.png);
+}
+
+/* 用户栏 */
+.user {
+    float: right;
+    margin-right: 36px;
+    font-size: 14px;
+    color: #666666;
+}
+
+/* 图片和文字垂直对齐 */
+.user img {
+    vertical-align: middle;
+}
+
+.user span {
+    vertical-align: middle;
+}
+
+/* banner */
+.banner {
+    height: 420px;
+    margin: 20px auto;
+    background-color: #1c036c;
+    background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* banner left  */
+.banner .w .left {
+    float: left;
+    width: 190px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner .w .left .list li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0px 20px;
+}
+
+.banner .w .left .list li a {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.banner .w .left .list li a span {
+    float: right;
+}
+
+.banner .w .left .list li a:hover {
+    color: #00a4ff;
+}
+
+/* banner right */
+.banner .w .right {
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: royalblue;
+}
+
+.banner .w .right .boxtop {
+    width: 230px;
+    height: 48px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 48px;
+    background-color: #9bceea;
+    font-size: 18px;
+}
+
+.banner .w .right .boxunder {
+    width: 230px;
+    height: 252px;
+    background-color: #fff;
+}
+
+.banner .w .right .boxunder h2 {
+    float: left;
+    width: 200px;
+    height: 49px;
+    margin: 18px 20px 0;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 14px;
+    font-weight: 400;
+    color: #4e4e4e;
+}
+
+.banner .w .right .boxunder h2 span {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.banner .w .right .boxunder button {
+    width: 200px;
+    height: 38px;
+    margin: 6px 15px 0;
+    background-color: #fff;
+    color: #00a4ff;
+    border: 1px solid #00a4ff;
+    font-size: 16px;
+}
