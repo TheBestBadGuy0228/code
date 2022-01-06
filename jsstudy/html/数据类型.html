@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+</head>
+<body>
+    <!-- 
+变量是用来存储值的所在处，它们有名字和数据类型。变量的数据类型决定了如何将代表这些值的位存储到计算机的内存中。JavaScript是一种弱类型或者说动态语言。这意味着不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。
+var age =10;
+/这是一个数字型
+var areYouok='是的；/这是一个字符串
+在代码运行时，变量的数据类型是由引擎根据=右边变量值的数据类型来判断的，运行完毕之后，变量就确定了数据类型。
+JavaScript拥有动态类型，同时也意味着相同的变量可用作不同的类型：
+var X=6;
+/x为数字
+var X="Bill";
+/x为字符串  
+
+-->
+    <script>
+        //在赋值之前变量的数据类型是不确定的
+        //js数据类型属于可变的
+        // var age = 66;
+        // console.log(age);
+        // age = 'fuck';
+        // console.log(age);
+
+        /* 1.数字型进制
+最常见的进制有二进制、八进制、十进制、十六进制。
+/1.八进制数字序列范围：0~7var num1=07;
+//对应十进制的7
+varnum2=019;//对应十进制的19
+var num3=08;
+//对应十进制的8
+/2.十六进制数字序列范围：0~9以及A~F
+var num0xA;
+现阶段我们只需要记住，在J中八进制前面加，十六进制前面加Ox */
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        //Infinity 无穷大
+        console.log(Number.MAX_VALUE * 2);
+        //-Infinity 无穷小
+        console.log(Number.MIN_VALUE * 2);
+        //NaN非数字
+        console.log('萨达大多' - 100);
+        //isNaN
+        console.log(isNaN('啊大大'));
+        console.log(isNaN(44));
+        /* 转义符                           解释说明
+            /n                      换行符，n是newline的意思
+            \\                              斜杠                            
+            \'                             单引号
+            \"                              ”双引号
+            \t                              tab缩进
+            \b                      空格，b是blank的意思 
+            */
+
+        // alert('酷热难耐，火辣的太阳底下，我挺拔的身姿，成为了最为独特的风景。\n我审视四周，这里，是我的舞台，我就是天地间的王者。\n这一刻，我豪气冲天，终于大喊一声："收破烂啦~"')
+
+        var age = prompt('输入设定的亮度参数');
+        alert('当前的亮度参数为' + age)
+        /* 
+        2.6 Undefined和Null
+一个声明后没有被赋值的变量会有一个默认值undefined（如果进行相连或者相加时，注意结果）
+
+一个声明变量给null值，里面存的值为空（学习对象时，我们继续研究null）
+
+        */
+
+        //查询变量的数据类型
+        console.log(typeof age);
+    </script>
+</body>
+</html>

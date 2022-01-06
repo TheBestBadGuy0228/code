@@ -1,0 +1,56 @@
+<!-- /*
+ * @Author: Xiao 
+ * @Date: 2022-01-04 10:12:11 
+ * @Last Modified by:   Xiao 
+ * @Last Modified time: 2022-01-04 10:12:11 
+ */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <!-- 
+逻辑运算符                                  说明                                    案例
+&&                              "逻辑与"，简称"与"and                           true &&false    //两侧都为真则为真
+||                              "逻辑或"，简称"或"or                            true ||false   //两侧都为假则为假
+!                               "逻辑非"，简称"非"not                               true       
+-->
+    <script>
+        var num = 7;
+        var str = 'wdsbgda'
+        console.log(num > 5 && str.length >= num); //true
+        console.log(num < 5 && str.length >= num); //false
+        console.log(!(num < 10)); //false
+        console.log(!(num < 10 && str.length >= num)); //false
+
+        //1.用我们的布尔值参与的逻辑运算true&&false==false
+        //2.123&&456是值或者是表达式参与逻辑运算？
+        //3.逻辑与短路运算如果表达式1结果为真则返回表达式2如果表达式1为假那么返回表达式1
+        console.log(123 && 456); //456
+        console.log(0 && 456); //0
+        console.log(0 && 1 + 2 && 456 * 56789); //0
+        //如果有空的或者否定的为假其余是真的 0 '' null undefined NaN
+
+        /* 
+        短路运算的原理：当有多个表达式（值）时左边的表达式值可以确定结果时，就不再继续运算右边的表达式的值；
+1.逻辑与
+    语法：表达式1&&表达式2
+    如果第一个表达式的值为真，则返回表达式2
+    如果第一个表达式的值为假，则返回表达式1 
+2.逻辑或
+    语法: 表达式1||表达式2
+    如果表达式1的值为真,则返回表达式1
+    如果表达式1的值为假,则返回表达式2
+    */
+        console.log(123 || 456); //123
+        console.log(0 || 123); //123
+        console.log(1213 || 4546 || 66667); //1213
+        console.log(0 || 12312 || 4354); //12312
+    </script>
+</head>
+<body>
+
+</body>
+</html>
