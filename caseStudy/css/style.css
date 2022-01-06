@@ -13,18 +13,17 @@ CSS属性书写顺序（重点）
 }
 
 /* 清除浮动 */
-.clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
+    content: "020";
+    display: block;
+    height: 0;
     clear: both;
+    visibility: hidden;
 }
 
 .clearfix {
-    *zoom: 1;
+    /* 触发 hasLayout */
+    zoom: 1;
 }
 
 /* 设置版心 */
@@ -272,6 +271,7 @@ a {
 
 /* 精品推荐内容模块 */
 .boutiqueContent1 {
+    height: 600px;
     float: left;
     margin-top: 35px;
 }
@@ -308,17 +308,18 @@ a {
     margin-top: 20px;
 }
 
-.boutiqueContent1 .under ul {
-    width: auto;
+.boutiqueContent1 .under .box1 img {
+    position: absolute;
+    right: -4px;
 }
 
 .boutiqueContent1 .under ul li {
+    position: relative;
     float: left;
     width: 228px;
     height: 270px;
     margin: 0 15px 10px 0;
     background-color: #ffffff;
-
 }
 
 .boutiqueContent1 .under .box1 {
@@ -338,6 +339,7 @@ a {
     font-weight: 400;
     color: #050505;
 }
+
 
 .boutiqueContent1 .under .box1 span {
     display: inline;
@@ -362,10 +364,4 @@ a {
     margin: 4px 8px;
     background-color: #999999;
     border-radius: 50%;
-}
-
-/* 网页末尾 */
-.webend {
-    height: 420px;
-    background-color: #00a4ff;
 }

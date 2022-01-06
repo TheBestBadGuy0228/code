@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script>
+
+        function getSum(num1, num2) {
+            let sum = 0;
+            for (let i = num1; i <= num2; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+
+        console.log(getSum(1, 100));
+        console.log(getSum(1, 1000000));
+        console.log(getSum(33, 555, 88));
+        // 在声明函数时，可以在函数名称后面的小括号中添加一些参数，这些参数被称为形参，而在调用该函数时，同样也需传递相应的参数，这些参数被称为实参
+        // 参数                       说明
+        // 形参               形式上的参数函数定义的时候传递的参数当前并不知道是什么
+        // 实参               实际上的参数函数调用的时候传递的参数实参是传递给形参的
+        // 实参多于形参 只取实际需求的参数数量,多于的参数不参与
+        // 实参少于形参 少的形参定义为undefined，结果为NaN
+
+        // 函数如果没有return 则返回undefined
+
+
+        /*
+        当我们不确定有多少个参数传递的时候，可以用arguments来获取。在JavaScript中，arguments实际上它是当前函数的一个内置对象。所有函数(有且仅有函数才有)都内置了一个arguments对象，arguments对象中存储了传递的所有实参。
+
+        伪数组并不是真正意义上的数组//1.具有数组的length属性
+        2.按照索引的方式进行存储的
+        3.它没有真正数组的一些方法pop（）push（）等等
+        */
+
+        //返回任意数值的累加和
+        function getSum1() {
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        console.log(getSum1(1, 2, 3, 45, 6, 7, 89, 9999));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

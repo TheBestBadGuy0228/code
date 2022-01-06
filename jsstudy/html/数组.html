@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+
+    <script>
+        // let arr = [];
+        // arr.push('h');
+        // var pop = arr.pop();
+        // console.log(pop);
+        // let arr = [];
+        // for (let i = 0; i <10 ; i++) {
+        //     arr.push(i);
+        // }
+        // for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+        // }
+        let maxValue = 0;
+        let arr1 = [22, 454, 454, 868, 22, 78, 1131, 355, 575, 24242, 576576, 2424243, 466456];
+        // for (let i = 0; i < arr1.length; i++) {
+        //     if (arr1[i] > maxValue) {
+        //         maxValue = arr1[i];
+        //     }
+        // }
+        // console.log(maxValue);
+        const slice = arr1.slice();
+        console.log(slice);
+        let arr2 = [];
+        for (let i = 0; i < arr1.length; i++) {
+            let min = slice[0];
+            for (let j = 0; j < arr1.length; j++) {
+                if (slice[j] < min) {
+                    min = slice[j]
+                }
+            }
+            arr2.push(min);
+            slice.splice(slice.indexOf(min), 1);
+        }
+        console.log(arr2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

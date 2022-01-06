@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch</title>
+    <script>
+        //        var 变量可以重新声明和修改
+        //        let 是块级作用域:块是由 {} 界定的代码块，大括号中有一个块。大括号内的任何内容都包含在一个块级作用域中
+        //        let 可以被修改但是不能被重新声明.
+        //        const 声明的变量在块级作用域内:const 不能被修改并且不能被重新声明
+        const num = prompt('请输入1~4四个数字'); //默认接收的是string
+        switch (parseInt(num)) { //case 和 条件结果必须是全等于(值和类型必须相等)! ===
+            case 1 :
+                alert('1');
+                break; //没有break 程序将继续向下执行
+            case 2 :
+                alert('2');
+                break;
+            case 3 :
+                alert('3');
+                break;
+            case 4 :
+                alert('4');
+                break;
+            default :
+                alert('没有这个选项!');
+        }
+
+// 一般情况下，它们两个语句可以相互替换
+// switch…case语句通常处理case为比较确定值的情况，而if.else.…语句更加灵活，常用于范围判断大于、等于某个范围）
+// switch语句进行条件判断后直接执行到程序的条件语句，效率更高。而if.else语句有几种条件，就得判断多少次。
+// 当分支比较少时，if.….
+// else语句的执行效率比switch语句高。
+// 当分支比较多时，switch语句的执行效率比较高，而且结构更清晰。
+    </script>
+</head>
+<body>
+</body>
+</html>
