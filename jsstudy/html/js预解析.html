@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>js预解析</title>
+    <script>
+        console.log(num);
+        // 2问
+        console.log(num);//undefined坑1
+        var num = 10;
+        //相当于执行了以下代码
+        //相当于执行了以下代码
+        // var num;
+        //console.log(num);
+        //num10;
+        //3问
+        fn();
+
+        function fn() {
+            console.log(11);
+        }
+
+        //4问
+        fun();//报错坑2
+        let fun = function () {
+            console.log(22);
+        }
+        //相当于执行了以卡代码
+        var fun;
+        fun();
+        fun = function () {
+            console.log(22);
+        }
+        // 1.我们js引擎运行js分为两步：
+        // 预解析 代码执行
+        //（1）.预解析js引擎会把js里面所有的var还有function提升到当前作用域的最前面
+        // （2）。代码执行按照代码书写的顺序从上往下执行
+        // 2.预解析分为变量预解析（变量提升）和函数预解析（函数提升）
+        //（①）变量提升就是把所有的变量声明提升到当前的作用域最前面不提升赋值操作
+        //（2）函数提升就是把所有的函数声明提升到当前作用域的最前面不调用函数
+    </script>
+</head>
+<body>
+
+</body>
+</html>

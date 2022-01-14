@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>事件基础</title>
+</head>
+<body>
+<!--
+3.1事件概述
+Javascript使我们有能力创建动态页面，而事件是可以被 javascript侦测到的行为。
+简单理解：角触发一响应机制。
+网页中的每个元素都可以产生某些可以触发 Javascript的事件，例如，我们可以在用户点击某按钮时产生一事件，然后去执行某些操作。
+
+-->
+<button id="btn">瞎搞</button>
+<div>不晓得是干嘛的</div>
+<button id="time">显示时间</button>
+<div id="time1">时间</div>
+<div id="time2">时间2</div>
+<script>
+    // 点击一个按钮，弹出对话框
+    // 1.事件是有三部分组成 事件源 事件类型 事件处理程序 我们也称为事件三要素
+    // (1) 事件源: 事件被触发对象
+    let btn = document.getElementById('btn');
+    // (2) 事件类型: 如何触发 什么事件(比如鼠标点击事件(onclick)/鼠标经过/键盘按下)
+    // (3) 事件处理程序 通过一个函数赋值的方式 完成
+    btn.onclick = function () {
+        alert('确实');
+    }
+    let elementsByTagName = document.querySelector('div');
+    elementsByTagName.onclick = function () {
+        console.log('我被点了一哈!');
+    }
+    elementsByTagName.onmouseover = function () {
+        console.log('我被扫了一下!');
+    }
+    elementsByTagName.onmouseout = function () {
+        console.log('你离开了我!');
+    }
+    elementsByTagName.onfocus = function () {
+        console.log('你再看我?');
+    }
+    elementsByTagName.onblur = function () {
+        console.log('你就不看了?');
+    }
+    elementsByTagName.onmouseup = function () {
+        console.log('用点力!');
+    }
+    // 3.3常见的鼠标事件
+    // 鼠标事件                    触发条件
+    // onclick                 鼠标点击左键触发
+    // onmouseover              鼠标经过触发
+    // onmouseout               鼠标离开触发
+    // onfocus                 获得鼠标焦点蝕发
+    // onblur                  失去鼠标焦点触发
+    // onmousemove              鼠标移动触发
+    // onmouseup                鼠标弹起触发
+    // onmousedown              鼠标按下触发
+
+
+    // 4 操作元素
+    // Javascript的DOM操作可以改变网页内容、结构和样式，我们可以利用DOM操作元素来改变元素里面的内容、属性等。
+    // 注意以下都是属性
+    // 4.1改变元素内容
+    // element.innerText
+    // 从起始位置到终止位置的内容，但它去除html标签，同时空格和换行也会去掉
+    // element.innerHTML
+    // 起始位置到终止位置的全部内容，包括html标签，同时保留空格和换行
+    let element = document.getElementById('time');
+    let element1 = document.getElementById('time1');
+    let element2 = document.querySelector('#time2');
+    element.onclick = function () {
+        element1.innerText = getDate();
+        // element1.innerText = '444444';
+    }
+    element2.innerText = getDate();
+
+    function getDate() {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let dates = date.getDate();
+        let arr = ['星期日', '星期一', '星期ニ', '星期三', '星期四', '星期五', '星期六'];
+        let day = date.getDay();
+        return '今天是：' + year + '年' + month + '月' + dates + '日' + arr[day];
+    }
+</script>
+</body>
+</html>

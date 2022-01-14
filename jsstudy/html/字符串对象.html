@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串对象</title>
+    <script>
+        //字符串对象 根据字符返回位置str.indexOf（'要查找的字符',[开始的位置]）
+        let str = '改革春风吹满地，春天来了';
+        console.log(str.indexOf('春'));
+        //查找字符串"abcoefoxyozzopp"中所有o出现的位置以及次数//核心算法：先查找第一个0出现的位置
+        //然后只要indexOf()返回的结果不是-1就继续往后查找
+        //因为indexOf只能查找到第一个，所以后面的查找，一定是当前索引加1，从而继续查找
+        console.log("============================")
+        let str1 = "abcoefoxyozzopopo";
+        let index = str1.indexOf('o');
+        while (!(index === -1)) {
+            console.log(index);
+            index = str1.indexOf('o', index + 1);
+        }
+        //根据位置返回字符
+        //1.charAt（index）根据位置返回字符
+        let str2 = 'andy';
+        console.log(str2.charAt(3));
+        //遍历所有的字符
+        for (let i = 0; i < str2.length; i++) {
+            console.log(str2.charAt(i));
+        }
+        //2.charCodeAt（index）返回相应索引号的字符ASCII值目的：判断用户按下了那个键
+        console.log(str2.charCodeAt('a'));
+
+        // 判断对象是否包含某个属性
+        let o = {
+            age: 18,
+            sex: 'gay'
+        }
+        console.log(o.age);
+        if (o['a']) {
+            console.log('包含该属性')
+        } else {
+            console.log("没有该属性")
+        }
+        // 判断字符串中字符出现的频率
+        // 核心算法：利用charAt（）遍历这个字符串
+        // 把每个字符都存储给对象，如果对象没有该属性，就为1，如果存在了就+1
+        // 遍历对象，得到最大值和该字符
+        let obj = {};
+        for (let i = 0; i < str1.length; i++) { // 遍历字符串对象
+            let s = str1.charAt(i); // 获取每个字符
+            if (obj[s]) { // 判断中是否包含该项属性
+                obj[s]++; // 包含属性则计数+1
+            } else {
+                obj[s] = 1; // 不包含则添加该属性并且计数为1
+            }
+        }
+        console.log(obj);
+        let max = 0;
+        let k = '';
+        for (let objKey in obj) {
+            if (obj[objKey] > max) {
+                max = obj[objKey];
+                k = objKey;
+            }
+        }
+        console.log(max);
+        console.log("出现最多的字符:" + k);
+
+        // 字符串操作方法
+        // 1. concat(字符串1,字符串2,.....)
+        let str3 = '1';
+        console.log(str3.concat('3', '45'));
+        // 2. substr（截取的起始位置'，'截取几个字符'）；
+        let str4 = '阿发师范生法法师';
+        console.log(str4.substr(2, 3)); // 第一个2是索引号的2从第几个开始第二个2是取几个字符
+        //1.替换字符replace（'被替换的字符，替换为的字符）只会替换从0开始的第一个字符
+        console.log(str4.replace('阿发', 'ss'));
+        // 2.全部替换某个字符/字符串 replaceAll('被替换的字符串','替换的字符串')
+        let str5 = "oooo424wtwtwtrooo";
+        console.log(str5.replaceAll('o', '*'));
+        // 3. 将字符串转换为数组 split('分隔符') 和join()的用法相反
+        let str6 = 'red,pink,blue';
+        console.log(str6.split(','));
+        let str7 = 'red&pink&blue';
+        console.log(str6.split('&'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

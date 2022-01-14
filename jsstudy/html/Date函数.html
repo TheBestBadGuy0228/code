@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Date函数</title>
+    <script>
+        let date = new Date();
+        console.log(date);
+        console.log(date.getTime());
+        console.log(date.getDay());
+        console.log(date.getFullYear());
+        console.log(date.getDate());
+        console.log(date.getMonth());
+
+        // 函数: 返回当前时间的时分秒 格式: 08:08:08
+
+        function getTime() {
+            let date1 = new Date();
+            let hours = date1.getHours();
+            hours = hours < 10 ? '0' + hours : hours;
+            let minutes = date1.getMinutes();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            let seconds = date1.getSeconds();
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            return hours + ':' + minutes + ':' + seconds;
+        }
+
+        console.log(getTime());
+        // 获得Date总的毫秒数(时间戳)不是当前时间的毫秒数而是距离1970年1月1号过了多少毫秒数
+        // 1.通过valueOf（）getTime（）
+        console.log(date.getTime()); // 现在距离1970.1.1 过去的时间毫秒数
+        console.log(date.valueOf());
+        // 2. 简单的写法
+        console.log(+date);
+        // H5新增写法
+        console.log(Date.now());
+
+        // 倒计时案例
+        function countDown(time) {
+            let now = +new Date();
+            let future = +new Date(time);
+            let number = (future - now) / 1000;
+            let d = parseInt(number / 60 / 60 / 24);
+            d = d < 10 ? '0' + d : d;
+            let h = parseInt(number / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            let m = parseInt(number / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            let s = parseInt(number % 60);
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+
+        console.log(countDown('2022-1-31 00:00:00'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

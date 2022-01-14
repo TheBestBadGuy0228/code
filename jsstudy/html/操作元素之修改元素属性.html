@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>操作元素之修改元素属性</title>
+</head>
+<body>
+<button id="zxy">图一</button>
+
+<button id="ldh">图二</button>
+
+<img src="../img/bg4.png" alt="图一">
+<div id="why">您好</div>
+<img id="img1" alt="图片">
+<script>
+    let element = document.querySelector('#zxy');
+    let element1 = document.querySelector('#ldh');
+    let img = document.querySelector('img');
+    element.onclick = function () {
+        img.src = '../img/bg4.png';
+        img.title = '图一';
+        img.alt = '图一';
+    }
+    element1.onclick = function () {
+        img.src = '../img/bg5.png';
+        img.title = '图二';
+        img.alt = '图二';
+    }
+    // 根据不同的系统时间显示不同的图片
+    let why = document.querySelector('#why');
+    let img1 = document.querySelector('#img1');
+    let date = new Date();
+    let hours = date.getHours();
+    if (8 < hours < 12) {
+        why.innerHTML = '上午好!';
+        img1.src = '../img/bg4.png';
+    } else if (hours === 12) {
+        why.innerHTML = '中午好!';
+        img1.src = '../img/bg5.png';
+    } else if (18 > hours > 12) {
+        why.innerHTML = '下午好!';
+        img1.src = '../img/bg4.png';
+    } else {
+        why.innerHTML = '夜已深!';
+        img1.src = '../img/bg5.png';
+    }
+</script>
+</body>
+</html>

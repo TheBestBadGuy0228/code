@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>math对象</title>
+    <script>
+        console.log(Math.E);
+        console.log(Math.PI);
+        console.log(Math.LN10);
+        console.log(Math.LN2);
+        console.log(Math.LOG10E);
+        console.log(Math.abs(-33));
+        console.log(Math.max(23, 343, 4545, 565));
+        console.log(Math.floor(1.0));
+        console.log(Math.ceil(1.0));
+
+        //round 函数
+        console.log(Math.round(1.2));
+        console.log(Math.round(1.9));
+        console.log(Math.round(-1.1));
+
+        console.log(Math.round(-1.9));
+
+        // .5 的情况特殊他是往大了取 -2 ~ -1.5 ~ -1   -1 > -2 取 -1
+        console.log(Math.round(-1.5)); //-1
+        console.log(Math.round(1.5)); // 2
+
+        // random 函数
+        console.log(Math.random()); // 返回一个包括0 但不包括1 的浮点数
+
+        // 返回两个数之间的随机整数,包括这两个数
+
+        function getNum(max, min) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        console.log(getNum(1, 100));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

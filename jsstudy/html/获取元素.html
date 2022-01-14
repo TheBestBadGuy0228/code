@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素</title>
+</head>
+<body>
+<!--
+2.1如何获取页面元素
+    DOM在我们实际开发中主要用来操作元素。
+    我们如何来获取页面中的元素呢？获取页面中的元素可以使用以下几种方
+     1. 根据ID获取
+     2. 根据标签名获取
+     3. 通过HTML5新增的方法获取
+     4. 特殊元素获取
+-->
+<div id="time">2020-2-1</div>
+<ul id="ee">
+    <li>hafekhsfkhsakdfhask</li>
+    <li>hafekhsfkhsakdfhask</li>
+    <li>hafekhsfkhsakdfhask</li>
+    <li>hafekhsfkhsakdfhask</li>
+    <li>hafekhsfkhsakdfhask</li>
+    <li>hafekhsfkhsakdfhask</li>
+</ul>
+<div class="box">盒子1</div>
+<div class="box">盒子2</div>
+<div id="nav">
+    <ul>
+        <li>预览</li>
+        <li>配置</li>
+    </ul>
+</div>
+<script>
+    // 根据ID获取元素
+    // 1.因为我们文档页面从上往下加载，所以先得有标签所以我们 script写到标签的下面
+    // 2.get获得 element元素by通过驼峰命名法
+    // 3.参数id是大小写敏感的字符串
+    // 4.返回的是一个元素对象
+    let time = document.getElementById('time');
+    console.log(time); // 获取到的是div对象
+    console.log(typeof time);
+    // 5.console.dir打印我们返回的元素对象更好的查看里面的属性和方法
+    console.dir(time);
+    // 根据标签名获取元素
+    // 1.返回的是获取过来元素对象的集合以伪数组的形式存储的
+    let elementsByTagName = document.getElementsByTagName('li');
+    console.log(elementsByTagName);
+    // 2.我们想要依次打印里面的元素对象我们可以采取遍历的方式
+    for (let i = 0; i < elementsByTagName.length; i++) {
+        console.log(elementsByTagName[i]);
+    }
+    // 3.如果页面中只有一个1返回的还是伪数组的形式
+    // 4.如果页面中没有这个元素返回的是空的伪数组的形式
+
+    // 还可以获取某个元素（父元素）内部所有指定标签名的子元素.
+    // element.getElementsByTagName（'标签名'）
+    // 注意：父元素必须是对象（必须指明是哪一个元素对象）获取的时候不包括父元素自己
+    let elementsByTagName1 = document.getElementsByTagName('ul');
+    console.log(elementsByTagName1[0].getElementsByTagName('li'));
+    // 或者通过ID的方式获取父元素
+    console.log(document.getElementById('ee').getElementsByTagName('li'));
+    // 通过类名获取元素
+    console.log(document.getElementsByClassName('box')); // 返回的同样是一个伪数组对象
+    // querySelector('选择器') 返回指定选择器的第一个元素对象 参数可以是类选择器也可以是ID选择器
+    let element = document.querySelector('.box');
+    console.log(element);
+    // querySelectorAll('选择器') 查出所有的对象的伪数组
+    console.log(document.querySelectorAll('.box'));
+    console.log(document.querySelector('#nav'));
+
+    // 特殊元素的获取(body,html)
+    let body = document.body; // 返回body元素对象
+    console.log(body);
+    // 获取html元素
+    console.log(document.documentElement); // 返回html元素对象
+</script>
+</body>
+</html>

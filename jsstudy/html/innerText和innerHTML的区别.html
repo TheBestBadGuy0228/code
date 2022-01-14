@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>innerText和innerHTML的区别</title>
+</head>
+<body>
+<div>
+
+</div>
+<p>
+    视频解析
+    <span>加载</span>
+</p>
+<script>
+    // innerText和 innerHTML的区别
+    // 1. innerText不识别HTML标签非标准去除空格和换行
+    let div = document.querySelector('div');
+    //div. innerText='<strong>今天是：</strong>2019';
+    // 2. innerHTML识别HTML标签W3C标准保留空格和换行的
+    div.innerHTML = '<strong>今天是:</strong> 2022';
+    let p = document.querySelector('p');
+    console.log(p.innerText);
+    console.log(p.innerHTML);
+</script>
+</body>
+</html>
