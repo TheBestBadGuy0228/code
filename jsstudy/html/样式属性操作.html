@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>样式属性操作</title>
+  <style>
+  div {
+      background-color: green;
+      width: 200px;
+      height: 200px;
+  }
+  </style>
+</head>
+<body>
+<!--
+4.4样式属性操作
+我们可以通过J修改元素的大小、颜色、位置等样式。
+1.element.style 行内样式操作
+2.element.className 类名样式操作
+注意：
+1.Js里面的样式采取驼峰命名法比如fontsize、backgroundColor
+2.Js修改style样式操作，产生的是行内样式，css权重比较高
+-->
+<div>
+
+</div>
+<script>
+let htmlDivElement = document.querySelector('div');
+htmlDivElement.onclick = function() {
+    htmlDivElement.style.backgroundColor = 'yellow';
+    this.style.width = '300px';
+    this.style.height = '300px';
+}
+</script>
+</body>
+</html>

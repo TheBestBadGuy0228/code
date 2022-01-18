@@ -5,6 +5,7 @@
   <title>京东密码输入案例</title>
   <style>
   .box {
+      position: relative;
       width: 400px;
       border-bottom: 1px solid #cccccc;
       margin: 100px auto;
@@ -16,12 +17,37 @@
       border: 0;
       outline: none;
   }
+
+  .box img {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 24px;
+  }
   </style>
 </head>
 <body>
 <div class='box'>
-  <label for=""></label>
-  <input type="password" name='' id=''>
+  <label for="">
+  </label>
+  <input type="password" name='' id='passwd'>
+  <img src='../img/close.png' alt='' id='eye'>
 </div>
+<script>
+let pwd = document.querySelector('#passwd');
+let eye = document.querySelector('#eye');
+let flag = 0;
+eye.onclick = function() {
+    if (flag === 0) {
+        eye.src = '../img/open.png';
+        pwd.type = 'text';
+        flag = 1;
+    } else {
+        eye.src = '../img/close.png'
+        pwd.type = 'password';
+        flag = 0;
+    }
+}
+</script>
 </body>
 </html>
