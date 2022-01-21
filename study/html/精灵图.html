@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>精灵图</title>
+    <style>
+        .box1 {
+            width: 60px;
+            height: 60px;
+            background: url("../img/sprites.png") -180px 0;
+            margin: 100px auto;
+        }
+
+        .box2 {
+            margin: 200px auto;
+            width: 236px;
+            height: 130px;
+            background: url("../img/sprites.png") 0 -218px;
+        }
+
+        .box3 {
+            margin: 300px auto;
+            width: 25px;
+            height: 25px;
+            background: url("../img/sprites.png") -156px -106px;
+        }
+
+        .box4 {
+            margin: 400px auto;
+            background-color: #E65A8DFF;
+            width: 120px;
+            height: 120px;
+
+        }
+
+        .h {
+            width: 110px;
+            height: 110px;
+            display: inline-block;
+            background: url("../img/abcd.jpg") -218px -142px;
+        }
+
+        .y {
+            width: 110px;
+            height: 110px;
+            display: inline-block;
+            background: url("../img/abcd.jpg") -368px -555px;
+        }
+
+        .j {
+            width: 105px;
+            height: 110px;
+            display: inline-block;
+            background: url("../img/abcd.jpg") -388px -142px;
+        }
+    </style>
+</head>
+<body>
+<!--
+1.2精灵图（sprites）的使用
+使用精灵图核心：
+    1.精灵技术主要针对于背景图片使用。就是把多个小背景图片整合到一张大图片中。
+    2.这个大图片也称为sprites精灵图或者雪碧图
+    3.移动背景图片位置，此时可以使用background-position。
+    4.移动的距离就是这个目标图片的x和y坐标。注意网页中的坐标有所不同
+    5.因为一般情况下都是往上往左移动，所以数值是负值。
+    6.使用精灵图的时候需要精确测量，每个小背景图片的大小和位置。
+
+使用精灵图核心总结：
+    1.精灵图主要针对于小的背景图片使用。
+    2.主要借助于背景位置来实现一background-position。
+    3.一般情况下精灵图都是负值。（千万注意网页中的坐标：轴右边走是正值，左边走是负值，y轴同理。）
+-->
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="h"></div>
+<div class="y"></div>
+<div class="j"></div>
+<script>
+    let j = document.querySelector('.j');
+    j.onclick = function () {
+        this.style.display = 'none';
+    }
+</script>
+</body>
+</html>
